@@ -1,10 +1,7 @@
 package br.com.cro;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.Getter;
-import lombok.Setter;
-
 import java.time.LocalDate;
 import java.time.MonthDay;
 
@@ -24,7 +21,6 @@ public enum Signo {
     SAGITARIO,
     AQUARIO,
     PEIXES;
-
 
         public static String buscarSigno( LocalDate dataNascimento) {
             MonthDay monthDayNascimento = MonthDay.of(dataNascimento.getMonth(), dataNascimento.getDayOfMonth());
@@ -56,14 +52,11 @@ public enum Signo {
         MonthDay sagitarioStartDate = MonthDay.of(11, 22);
         MonthDay sagitarioEndDate = MonthDay.of(12, 21);
 
-
         MonthDay aquarioStartDate = MonthDay.of(1, 21);
         MonthDay aquarioEndDate = MonthDay.of(2, 19);
 
         MonthDay peixesStartDate = MonthDay.of(2, 19);
         MonthDay peixesEndDate = MonthDay.of(3, 20);
-
-
 
         if (isWithinRange(monthDayNascimento, ariesStartDate, ariesEndDate)) {
             return "Aries";
@@ -90,14 +83,9 @@ public enum Signo {
         } else {
             return "Capricórnio";
         }
-
     }
-
         public static boolean isWithinRange(MonthDay dataNascimento, MonthDay startDate, MonthDay endDate) {
-
         return !(dataNascimento.isBefore(startDate) || dataNascimento.isAfter(endDate));
-
     }
-
 
 }

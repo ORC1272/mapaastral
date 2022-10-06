@@ -28,10 +28,6 @@ public class SignoLunar {
                 }
             }
         }
-
         return  "Dinossauro";
-
     }
-
-
 }

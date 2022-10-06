@@ -2,17 +2,12 @@ package br.com.cro;
 
 import java.time.*;
 import java.time.format.DateTimeFormatter;
-
-
 import static br.com.cro.Ascendente.ascendente;
 import static br.com.cro.SignoLunar.signoLunar;
 
-
 public class Main {
 
-
     public static void main ( String[] args ) {
-
 
         LocalDateTime dataHoraNascimento2 = LocalDateTime.of(2004, 5, 11, 12, 30);
         LocalDateTime dataHoraNascimento3 = LocalDateTime.of(1994, 10, 1, 1, 30);
@@ -25,7 +20,6 @@ public class Main {
         ZoneId zoneId2 = ZoneId.of("America/Recife");
         ZoneId zoneId3 = ZoneId.of("America/Boa_Vista");
         ZoneId zoneId1 = ZoneId.of("America/Boise");
-
 
         // Idade
         Period period = Period.between(dataHoraNascimento1.toLocalDate(), LocalDate.now());
@@ -49,30 +43,12 @@ public class Main {
 
         System.out.println("Signo :" + buscarSigno(dataHoraNascimento1.toLocalDate()));
 
-       // System.out.println("Ascendente :" + ascendente("Sa");
-
-       // System.out.println("Signo: " + imprimeSigno(dataHoraNascimento.toLocalDate()));
-
-
-        //System.out.println("Signo: " + buscarSigno(dataHoraNascimento1.toLocalDate()));
-
-       //ocalTime horaMinutoNascimento = LocalTime.of(dataNascimento.getHour(),dataNascimento.getMinute());
-
-
         System.out.println("Ascendente: " + ascendente(dataHoraNascimento1));
-
-
 
         System.out.println("Signo Lunar: " + signoLunar(dataHoraNascimento1.toLocalTime(), String.valueOf(zoneId1)));
 
-
-
     }
-
-
     private static String buscarSigno ( LocalDate of ) {
         return Signo.buscarSigno(of);
     }
-
-
 }
